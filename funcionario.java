@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Funcionario{
+public abstract class Funcionario{
 
     private String nome;
     private String endereco;
@@ -10,6 +10,8 @@ public class Funcionario{
     private int idsind;
     private double taxasind;
     private double salariototal;
+
+    public abstract void calcSalary(); //tirar duvida
 
     public funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal){
         this.nome = nome;
