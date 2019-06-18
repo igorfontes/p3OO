@@ -7,8 +7,8 @@ class main{
         Scanner input = new Scanner(System.in);
         ArrayList<Funcionario> list = new ArrayList<>();
 
-        //Gerencia empresa = new Gerencia();
-        //empresa.addFunc();
+        Gerencia empresa = new Gerencia();
+        list.add(empresa.addFunc());
     
     }
     
