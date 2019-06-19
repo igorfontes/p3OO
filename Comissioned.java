@@ -2,40 +2,43 @@ import java.util.Scanner;
 
 public class Comissioned extends Funcionario{
 
-    private double salariocomsemanal;
+    private double salariocommensal;
     private double percentcomis;
 
-    Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, double salariototal, double salariocomsemanal){
+    Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariocommensal, double percentcomis){
         super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
-        this.salariocomsemanal = salariocomsemanal;
+        this.salariocommensal = salariocommensal;
         this.percentcomis = percentcomis;
     }
 
-    public double getSalarioComSemanal(){
-        return salariocomsemanal;
+    public double getSalarioComMensal(){
+        return salariocommensal;
     }
 
-    public void setSalarioComSemanal(double salariocomsemanal){
-        this.salariocomsemanal = salariocomsemanal;
+    public void setSalarioComMensal(double salariocommensal){
+        this.salariocommensal = salariocommensal;
     }
 
-    public void lancaVenda(int id){
-        Double auxvenda;
-        System.out.print("Digite o id:");
-        System.out.print("Digite o dia atual:");
-        System.out.print("Digite o mes atual:");
-        System.out.print("Digite o ano atual:");
-        System.out.print("Digite o valor da venda:");
-        auxvenda = input.nextDouble();
-        System.out.print("Digite o valor da porcentagem da comissao:");
-        percentcomis = input.nextDouble();
-        salariototal += auxvenda*percentcomis;
-    }
+    // public void lancaVenda(){
+    //     Double auxvenda;
+    //     System.out.print("Digite o id:");
+    //     auxid = input.nextInt();
+    //     System.out.print("Digite o dia atual:");
+    //     auxdia = input.nextInt();
+    //     System.out.print("Digite o mes atual:");
+    //     auxmes = input.nextInt();
+    //     System.out.print("Digite o ano atual com 4 dígitos:");
+    //     auxano = input.nextInt();
+    //     System.out.print("Digite o valor da venda:");
+    //     auxvenda = input.nextDouble();
+    //     Funcionario.setSalarioTotal(Funcionario.getSalarioTotal() + auxvenda*percentcomis);
+    //     //salariototal += auxvenda*percentcomis;
+    // }
 
     public void calcSalary(int id){
         int auxsalary = 0;
-        auxsalary += salariomensal;
-        salariototal += auxsalary;
+        auxsalary += salariocommensal;
+        //Funcionario.setSalarioTotal(Funcionario.getSalarioTotal() + auxsalary);
 
     }
 

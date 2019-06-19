@@ -4,7 +4,7 @@ public class Salaried extends Funcionario{
 
     private double salariomensal;
 
-    Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, double salariototal, double salariomensal){
+    Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariomensal){
         super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
         this.salariomensal = salariomensal;
     }
@@ -20,7 +20,7 @@ public class Salaried extends Funcionario{
     public void calcSalary(int id){
         int auxsalary = 0;
         auxsalary += salariomensal;
-        salariototal += auxsalary;
+        //salariototal += auxsalary;
     }
 
 }
