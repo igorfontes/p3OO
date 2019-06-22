@@ -4,16 +4,16 @@ public class Salaried extends Funcionario{
 
     private double salariomensal;
 
-    Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariomensal){
+    public Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariomensal){
         super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
         this.salariomensal = salariomensal;
     }
 
-    public double getSalarioMensal(){
+    public double getSalarioBase(){
         return salariomensal;
     }
 
-    public void setSalarioMensal(double salariomensal){
+    public void setSalarioBase(double salariomensal){
         this.salariomensal = salariomensal;
     }
 

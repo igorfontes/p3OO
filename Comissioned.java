@@ -5,17 +5,17 @@ public class Comissioned extends Funcionario{
     private double salariocommensal;
     private double percentcomis;
 
-    Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariocommensal, double percentcomis){
+    public Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariocommensal, double percentcomis){
         super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
         this.salariocommensal = salariocommensal;
         this.percentcomis = percentcomis;
     }
 
-    public double getSalarioComMensal(){
+    public double getSalarioBase(){
         return salariocommensal;
     }
 
-    public void setSalarioComMensal(double salariocommensal){
+    public void setSalarioBase(double salariocommensal){
         this.salariocommensal = salariocommensal;
     }
 
@@ -39,7 +39,6 @@ public class Comissioned extends Funcionario{
         int auxsalary = 0;
         auxsalary += salariocommensal;
         //Funcionario.setSalarioTotal(Funcionario.getSalarioTotal() + auxsalary);
-
     }
 
 }

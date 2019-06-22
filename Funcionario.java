@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public abstract class Funcionario{
 
@@ -11,9 +12,11 @@ public abstract class Funcionario{
     private double taxasind;
     private double salariototal;
 
-    public abstract void calcSalary(int id); //tirar duvida
+    public abstract double getSalarioBase();
+    public abstract void setSalarioBase(double salariobase);
+    //public abstract void calcSalary(ArrayList<Funcionario> list); //tirar duvida
 
-    Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal){
+    public Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal){
         this.nome = nome;
         this.endereco = endereco;
         this.tipodefunc = tipodefunc;
