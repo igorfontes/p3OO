@@ -1,12 +1,13 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Comissioned extends Funcionario{
 
     private double salariocommensal;
     private double percentcomis;
 
-    public Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariocommensal, double percentcomis){
-        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
+    public Comissioned(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariocommensal, double percentcomis, String agendainterval, int agendaday, String agendadayofweek){
+        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal, agendainterval, agendaday, agendadayofweek);
         this.salariocommensal = salariocommensal;
         this.percentcomis = percentcomis;
     }
@@ -35,10 +36,10 @@ public class Comissioned extends Funcionario{
     //     //salariototal += auxvenda*percentcomis;
     // }
 
-    public void calcSalary(int id){
-        int auxsalary = 0;
-        auxsalary += salariocommensal;
-        //Funcionario.setSalarioTotal(Funcionario.getSalarioTotal() + auxsalary);
-    }
+    // public void calcSalary(ArrayList<Funcionario> list){
+    //     int auxsalary = 0;
+    //     auxsalary += salariocommensal;
+    //     //Funcionario.setSalarioTotal(Funcionario.getSalarioTotal() + auxsalary);
+    // }
 
 }

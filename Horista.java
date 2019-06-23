@@ -5,8 +5,8 @@ public class Horista extends Funcionario{
 
     private double salariohora;
 
-    public Horista(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariohora){
-        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal);
+    public Horista(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariohora, String agendainterval, int agendaday, String agendadayofweek){
+        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal, agendainterval, agendaday, agendadayofweek);
         this.salariohora = salariohora;
     }
 
@@ -61,6 +61,10 @@ public class Horista extends Funcionario{
     //     double auxsalariototal = list.get(auxfuncposition).getSalarioTotal() + auxsalary;
     //     list.get(auxfuncposition).setSalarioTotal(auxsalariototal);
 
+    // }
+
+    // public void calcSalary(ArrayList<Funcionario> list){
+    //     return;
     // }
 
 }

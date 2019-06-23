@@ -11,12 +11,15 @@ public abstract class Funcionario{
     private int idsind;
     private double taxasind;
     private double salariototal;
+    private String agendainterval;
+    private int agendaday;
+    private String agendadayofweek;
 
-    public abstract double getSalarioBase();
+    public abstract double getSalarioBase(); //salario base do horista e: salhora; assalariado: salmensal; comis: salmensal
     public abstract void setSalarioBase(double salariobase);
     //public abstract void calcSalary(ArrayList<Funcionario> list); //tirar duvida
 
-    public Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal){
+    public Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, String agendainterval, int agendaday, String agendadayofweek){
         this.nome = nome;
         this.endereco = endereco;
         this.tipodefunc = tipodefunc;
@@ -25,6 +28,9 @@ public abstract class Funcionario{
         this.idsind = idsind;
         this.taxasind = taxasind;
         this.salariototal = salariototal;
+        this.agendainterval = agendainterval;
+        this.agendaday = agendaday;
+        this.agendadayofweek = agendadayofweek;
     }
 
     public String getNome(){
@@ -59,6 +65,18 @@ public abstract class Funcionario{
         return salariototal;
     }
 
+    public String getAgendaInterval(){
+        return agendainterval;
+    }
+
+    public int getAgendaDay(){
+        return agendaday;
+    }
+
+    public String getAgendaDayofWeek(){
+        return agendadayofweek;
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -89,6 +107,18 @@ public abstract class Funcionario{
 
     public void setSalarioTotal(double salariototal){
         this.salariototal = salariototal;
+    }
+
+    public void setAgendaInterval(){
+        this.agendainterval = agendainterval;
+    }
+
+    public void setAgendaDay(){
+        this.agendaday = agendaday;
+    }
+
+    public void setAgendaDayofWeek(){
+        this.agendadayofweek = agendadayofweek;
     }
 
 }
