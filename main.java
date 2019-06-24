@@ -8,10 +8,11 @@ class main{
         Scanner input = new Scanner(System.in);
         ArrayList<Funcionario> list = new ArrayList<>();
         //Gerencia empresa = new Gerencia();
+        //Salario calcSalario = new Salario();
 
         while(true){
 
-            System.out.print("\nDigite uma das opcoes abaixo:\n1 - adicionar funcionario\n2 - remover funcionario\n3 - lancar ponto\n4 - add a selling\n5 - add a service fee\n6 - mudar dados do funcionario\n7 - update payroll and pay employees\n8 - undo\n9 - redo\n10 - set up payment agenda\n11 - create new agenda\n12 - sair\n");
+            System.out.print("\nDigite uma das opcoes abaixo:\n1 - adicionar funcionario\n2 - remover funcionario\n3 - lancar ponto\n4 - adicionar venda\n5 - cobrar taxa extra\n6 - mudar dados do funcionario\n7 - update payroll and pay employees\n8 - undo\n9 - redo\n10 - set up payment agenda\n11 - create new agenda\n12 - sair\n");
             option = input.nextInt();
             
             switch(option){
@@ -22,7 +23,13 @@ class main{
                 Gerencia.removeFunc(list);
                 break;
                 case 3:
-                //Horista.calcSalary(list);
+                Salario.lancaPonto(list);
+                break;
+                case 4:
+                Salario.addVenda(list);
+                break;
+                case 5:
+                Salario.cobrarTaxa(list);
                 break;
                 case 6:
                 Gerencia.mudaDados(list);

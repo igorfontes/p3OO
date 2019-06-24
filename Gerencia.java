@@ -17,7 +17,6 @@ public class Gerencia{
     static double auxtaxasind;
     static double auxsalariohora;
     static double auxsalariomensal;
-    static double auxpercentcomis;
     static double auxsalariocommensal;
     
     public static void addFunc(ArrayList<Funcionario> list){
@@ -62,10 +61,8 @@ public class Gerencia{
             case "c": 
             System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
             auxsalariocommensal = input.nextDouble();
-            System.out.print("Digite o valor do percentual em comissoes(digite a porcentagem como um decimal com virgula. Exemplo: 25,7 para 25,7 por cento) e pressione enter:");
-            auxpercentcomis = input.nextDouble();
             input.nextLine();
-            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariocommensal, auxpercentcomis, "bi-semanalmente", 0, "");
+            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, auxsalariocommensal, auxsalariocommensal, "bi-semanalmente", 0, "");
             list.add(auxcomissioned);
             return;
         }
