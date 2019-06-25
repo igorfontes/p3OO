@@ -40,6 +40,9 @@ class main{
                 case 10:
                 Agenda.escolheAgenda(list);
                 break;
+                case 11:
+                Agenda.criaAgenda(list);
+                break;
 
             }
 

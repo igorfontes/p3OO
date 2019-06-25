@@ -126,9 +126,36 @@ public class Gerencia{
                 case 3: //QUANDO MUDA O TIPO COMO FAZ?
                 System.out.print("Digite o novo tipo de funcionario:");
                 input.nextLine();
-                auxendereco = input.nextLine();
-                list.get(auxfuncposition).setTipoDeFunc(auxtipodefunc);
-                System.out.printf("Tipo de funcionario modificado para %s.\n",list.get(auxfuncposition).getTipoDeFunc());
+                auxtipodefunc = input.nextLine();
+                switch(auxtipodefunc){
+                    case("h"):
+                    System.out.print("Digite o valor do salario-hora e pressione enter:");
+                    auxsalariohora = input.nextDouble();
+                    input.nextLine();
+                    Funcionario auxhorista = new Horista(list.get(auxfuncposition).getNome(), list.get(auxfuncposition).getEndereco(), auxtipodefunc, list.get(auxfuncposition).getModoDePagto(), auxid, list.get(auxfuncposition).getIdSind(), list.get(auxfuncposition).getTaxaSind(), list.get(auxfuncposition).getSalarioTotal(), auxsalariohora, "semanalmente", 0, "", 0);
+                    list.remove(auxfuncposition);
+                    list.add(auxhorista);
+                    System.out.print("Tipo de funcionario modificado com sucesso!\n");
+                    return;
+                    case "a": 
+                    System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
+                    auxsalariomensal = input.nextDouble();
+                    input.nextLine(); 
+                    Funcionario auxsalaried = new Salaried(list.get(auxfuncposition).getNome(), list.get(auxfuncposition).getEndereco(), auxtipodefunc, list.get(auxfuncposition).getModoDePagto(), auxid, list.get(auxfuncposition).getIdSind(), list.get(auxfuncposition).getTaxaSind(), list.get(auxfuncposition).getSalarioTotal(), auxsalariomensal, "mensalmente", 0, "", 0);
+                    list.remove(auxfuncposition);
+                    list.add(auxsalaried);
+                    System.out.print("Tipo de funcionario modificado com sucesso!\n");
+                    return;
+                    case "c": 
+                    System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
+                    auxsalariocommensal = input.nextDouble();
+                    input.nextLine();
+                    Funcionario auxcomissioned = new Comissioned(list.get(auxfuncposition).getNome(), list.get(auxfuncposition).getEndereco(), auxtipodefunc, list.get(auxfuncposition).getModoDePagto(), auxid, list.get(auxfuncposition).getIdSind(), list.get(auxfuncposition).getTaxaSind(), list.get(auxfuncposition).getSalarioTotal(), auxsalariocommensal, "bi-semanalmente", 0, "", 0);
+                    list.remove(auxfuncposition);
+                    list.add(auxcomissioned);
+                    System.out.print("Tipo de funcionario modificado com sucesso!\n");
+                    return;
+                }
                 break;
                 case 4:
                 System.out.print("Digite o novo modo de pagamento:");
