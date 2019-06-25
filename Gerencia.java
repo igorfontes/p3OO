@@ -62,7 +62,7 @@ public class Gerencia{
             System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
             auxsalariocommensal = input.nextDouble();
             input.nextLine();
-            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, auxsalariocommensal, auxsalariocommensal, "bi-semanalmente", 0, "");
+            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariocommensal, "bi-semanalmente", 0, "");
             list.add(auxcomissioned);
             return;
         }

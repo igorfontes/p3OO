@@ -12,7 +12,7 @@ class main{
 
         while(true){
 
-            System.out.print("\nDigite uma das opcoes abaixo:\n1 - adicionar funcionario\n2 - remover funcionario\n3 - lancar ponto\n4 - adicionar venda\n5 - cobrar taxa extra\n6 - mudar dados do funcionario\n7 - update payroll and pay employees\n8 - undo\n9 - redo\n10 - set up payment agenda\n11 - create new agenda\n12 - sair\n");
+            System.out.print("\nDigite uma das opcoes abaixo:\n1 - adicionar funcionario\n2 - remover funcionario\n3 - lancar ponto\n4 - adicionar venda\n5 - cobrar taxa extra\n6 - mudar dados do funcionario\n7 - roda folha\n8 - undo\n9 - redo\n10 - escolher agenda de pagamento\n11 - create new agenda\n12 - sair\n");
             option = input.nextInt();
             
             switch(option){
@@ -34,6 +34,13 @@ class main{
                 case 6:
                 Gerencia.mudaDados(list);
                 break;
+                case 7:
+                Agenda.rodaFolha(list);
+                break;
+                case 10:
+                Agenda.escolheAgenda(list);
+                break;
+
             }
 
             if(option == 12){

@@ -109,15 +109,15 @@ public abstract class Funcionario{
         this.salariototal = salariototal;
     }
 
-    public void setAgendaInterval(){
+    public void setAgendaInterval(String agendainterval){
         this.agendainterval = agendainterval;
     }
 
-    public void setAgendaDay(){
+    public void setAgendaDay(int agendaday){
         this.agendaday = agendaday;
     }
 
-    public void setAgendaDayofWeek(){
+    public void setAgendaDayofWeek(String agendadayofweek){
         this.agendadayofweek = agendadayofweek;
     }
 
