@@ -32,8 +32,10 @@ public class Agenda{
                 case("semanalmente"):
                 break;
                 case("bi-semanalmente"):
+                list.get(auxfuncposition).setContaDia(0); //reinicia contagem de sextas
                 break;
                 case("semanal"):
+                list.get(auxfuncposition).setContaDia(0); //reinicia contagem de dias
                 System.out.print("Digite 1 para ser pago toda semana, 2 a cada duas semanas etc:");
                 auxagendaday = input.nextInt();
                 input.nextLine();
@@ -70,6 +72,7 @@ public class Agenda{
 			lastday--;
         }
         //System.out.printf("Ultimo dia util: %s",auxdate);
+        //System.out.printf("Ultimo dia util: %d\n",localdate.getDayOfWeek().ordinal());
         for (int i = 0; i < list.size(); i++) {
 
             //incrementa salario dia a dia
@@ -112,8 +115,234 @@ public class Agenda{
                 }
                 break;
                 case("bi-semanalmente"):
+                if(localdate.getDayOfWeek().ordinal() == 4){ //sexta%2 == 0, paga
+                    list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                    if(list.get(i).getContaDia()%2 == 0){
+                        list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                        System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                        list.get(i).setSalarioTotal(0.0);
+                    }    
+                }
                 break;
                 case("semanal"):
+                switch(list.get(i).getAgendaDay()){
+                    case 1:
+                    switch(list.get(i).getAgendaDayofWeek()){
+                    case("seg"):
+                    if(localdate.getDayOfWeek().ordinal() == 0){ //seg%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%1 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("ter"):
+                    if(localdate.getDayOfWeek().ordinal() == 1){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%1 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qua"):
+                    if(localdate.getDayOfWeek().ordinal() == 2){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%1 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qui"):
+                    if(localdate.getDayOfWeek().ordinal() == 3){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%1 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("sex"):
+                    if(localdate.getDayOfWeek().ordinal() == 4){ //sexta%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%1 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    }
+                    break;
+                    case 2:
+                    switch(list.get(i).getAgendaDayofWeek()){
+                    case("seg"):
+                    if(localdate.getDayOfWeek().ordinal() == 0){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%2 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("ter"):
+                    if(localdate.getDayOfWeek().ordinal() == 1){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%2 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qua"):
+                    if(localdate.getDayOfWeek().ordinal() == 2){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%2 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qui"):
+                    if(localdate.getDayOfWeek().ordinal() == 3){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%2 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("sex"):
+                    if(localdate.getDayOfWeek().ordinal() == 4){ //sexta%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%2 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    }
+                    break;
+                    case 3:
+                    switch(list.get(i).getAgendaDayofWeek()){
+                    case("seg"):
+                    if(localdate.getDayOfWeek().ordinal() == 0){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%3 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("ter"):
+                    if(localdate.getDayOfWeek().ordinal() == 1){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%3 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qua"):
+                    if(localdate.getDayOfWeek().ordinal() == 2){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%3 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qui"):
+                    if(localdate.getDayOfWeek().ordinal() == 3){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%3 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("sex"):
+                    if(localdate.getDayOfWeek().ordinal() == 4){ //sexta%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%3 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    }
+                    break;
+                    case 4:
+                    switch(list.get(i).getAgendaDayofWeek()){
+                    case("seg"):
+                    if(localdate.getDayOfWeek().ordinal() == 0){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%4 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("ter"):
+                    if(localdate.getDayOfWeek().ordinal() == 1){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%4 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qua"):
+                    if(localdate.getDayOfWeek().ordinal() == 2){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%4 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("qui"):
+                    if(localdate.getDayOfWeek().ordinal() == 3){ //qui%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%4 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    case("sex"):
+                    if(localdate.getDayOfWeek().ordinal() == 4){ //sexta%agendaday == 0, paga
+                        list.get(i).setContaDia(list.get(i).getContaDia()+1);
+                        if(list.get(i).getContaDia()%4 == 0){
+                            list.get(i).setSalarioTotal(list.get(i).getSalarioTotal()-list.get(i).getTaxaSind());
+                            System.out.printf("O funcionario com id %d recebeu %.2f reais hoje\n", list.get(i).getId(), list.get(i).getSalarioTotal());
+                            list.get(i).setSalarioTotal(0.0);
+                        }    
+                    }
+                    break;
+                    }
+                    break;                  
+                }
                 break;
 
             }

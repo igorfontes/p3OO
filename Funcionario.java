@@ -14,12 +14,13 @@ public abstract class Funcionario{
     private String agendainterval;
     private int agendaday;
     private String agendadayofweek;
+    private int contadia;
 
     public abstract double getSalarioBase(); //salario base do horista e: salhora; assalariado: salmensal; comis: salmensal
     public abstract void setSalarioBase(double salariobase);
     //public abstract void calcSalary(ArrayList<Funcionario> list); //tirar duvida
 
-    public Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, String agendainterval, int agendaday, String agendadayofweek){
+    public Funcionario(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, String agendainterval, int agendaday, String agendadayofweek, int contadia){
         this.nome = nome;
         this.endereco = endereco;
         this.tipodefunc = tipodefunc;
@@ -31,6 +32,7 @@ public abstract class Funcionario{
         this.agendainterval = agendainterval;
         this.agendaday = agendaday;
         this.agendadayofweek = agendadayofweek;
+        this.contadia = contadia;
     }
 
     public String getNome(){
@@ -77,6 +79,10 @@ public abstract class Funcionario{
         return agendadayofweek;
     }
 
+    public int getContaDia(){
+        return contadia;
+    }
+
     public void setNome(String nome){
         this.nome = nome;
     }
@@ -119,6 +125,10 @@ public abstract class Funcionario{
 
     public void setAgendaDayofWeek(String agendadayofweek){
         this.agendadayofweek = agendadayofweek;
+    }
+
+    public void setContaDia(int contadia){
+        this.contadia = contadia;
     }
 
 }

@@ -5,8 +5,8 @@ public class Salaried extends Funcionario{
 
     private double salariomensal;
 
-    public Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariomensal, String agendainterval, int agendaday, String agendadayofweek){
-        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal, agendainterval, agendaday, agendadayofweek);
+    public Salaried(String nome, String endereco, String tipodefunc, String mododepagto, int id, int idsind, double taxasind, double salariototal, double salariomensal, String agendainterval, int agendaday, String agendadayofweek, int contadia){
+        super(nome, endereco, tipodefunc, mododepagto, id, idsind, taxasind, salariototal, agendainterval, agendaday, agendadayofweek, contadia);
         this.salariomensal = salariomensal;
     }
 

@@ -48,21 +48,21 @@ public class Gerencia{
             System.out.print("Digite o valor do salario-hora e pressione enter:");
             auxsalariohora = input.nextDouble();
             input.nextLine();
-            Funcionario auxhorista = new Horista(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariohora, "semanalmente", 0, "");
+            Funcionario auxhorista = new Horista(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariohora, "semanalmente", 0, "", 0);
             list.add(auxhorista);
             return;
             case "a": 
             System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
             auxsalariomensal = input.nextDouble();
             input.nextLine(); 
-            Funcionario auxsalaried = new Salaried(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariomensal, "mensalmente", 0, "");
+            Funcionario auxsalaried = new Salaried(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariomensal, "mensalmente", 0, "", 0);
             list.add(auxsalaried);
             return;
             case "c": 
             System.out.print("Digite o valor do salario mensal fixo e pressione enter:");
             auxsalariocommensal = input.nextDouble();
             input.nextLine();
-            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariocommensal, "bi-semanalmente", 0, "");
+            Funcionario auxcomissioned = new Comissioned(auxnome, auxendereco, auxtipodefunc, auxmododepagto, auxid, auxidsind, auxtaxasind, 0, auxsalariocommensal, "bi-semanalmente", 0, "", 0);
             list.add(auxcomissioned);
             return;
         }
