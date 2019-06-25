@@ -123,7 +123,7 @@ public class Gerencia{
                 list.get(auxfuncposition).setEndereco(auxendereco);
                 System.out.printf("Endereco modificado para %s.\n",list.get(auxfuncposition).getEndereco());
                 break;
-                case 3: //QUANDO MUDA O TIPO COMO FAZ?
+                case 3: 
                 System.out.print("Digite o novo tipo de funcionario:");
                 input.nextLine();
                 auxtipodefunc = input.nextLine();
